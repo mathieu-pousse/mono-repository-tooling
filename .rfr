@@ -1,0 +1,21 @@
+{
+    "version": "1",
+    "message": "could you please have a look to this.",
+    "rules": [
+        {
+            "type": "path-regex",
+            "regex": "\\.sql",
+            "reviewers": [
+                "team-ops",
+                "team-dba"
+            ]
+        },
+        {
+            "type": "path-regex",
+            "regex": "\\.js",
+            "reviewers": [
+                "team-hypster"
+            ]
+        }
+    ]
+}
