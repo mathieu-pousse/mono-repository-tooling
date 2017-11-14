@@ -1,15 +1,21 @@
 
-class PathRegex {
+class PathRegexRule {
 
-    constructor(regex, caseInsensitive) {
-        this.regex = new RegExp(regex, caseInsensitive === true ? 'i' : null);
+    constructor(rule) {
+        this.regex = new RegExp(rule.regex, rule.caseInsensitive === true ? 'i' : '');
+        this.reviewers = rule.reviewers
+        console.log(`PathRegexRule matching ${this.regex.source}`)
     }
 
-    match(diff) {
-        return this.regex.match(diff.filename);
+    match(diffs) {
+        return diffs.map(diff => {
+            const result = this.regex.test(diff.filename);
+            console.log(`does ${diff.filename} matches ${this.regex.source} ? ${result}`)
+            return result;
+        })
+            .reduce((accumulator, result) => accumulator || result, false);
     }
-
 }
 
 
-export default PathRegex;
+export default PathRegexRule;

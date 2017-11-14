@@ -12,6 +12,7 @@ class Github {
   }
 
   post(url, payload) {
+    console.log(`POST ${url}`)
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -20,7 +21,7 @@ class Github {
       },
       body: JSON.stringify(payload)
     }).then(response => {
-      console.log(`status : ${response.status}`)
+      //console.log(`status : ${response.status}`)
       return response.json();
     }).then(response => {
       return response;
@@ -28,6 +29,7 @@ class Github {
   }
 
   get(url) {
+    console.log(`GET ${url}`)
     return fetch(url, {
       method: 'GET',
       headers: {
@@ -35,9 +37,10 @@ class Github {
         'Authorization': 'Basic ' + this.credentials()
       }
     }).then(response => {
-      console.log(`status : ${response.status}`)
+      //console.log(`${url} status : ${response.status}`)
       return response.json();
     }).then(response => {
+      //console.log(`${url} - body`, response)
       return response;
     }).catch(err => { console.log(err); });
   }

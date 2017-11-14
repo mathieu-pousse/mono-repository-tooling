@@ -6,15 +6,15 @@
             "type": "path-regex",
             "regex": "\\.sql",
             "reviewers": [
-                "team-ops",
-                "team-dba"
+                "mathieu-pousse/team-ops",
+                "mathieu-pousse/team-dba"
             ]
         },
         {
             "type": "path-regex",
             "regex": "\\.js",
             "reviewers": [
-                "team-hypster"
+                "mathieu-pousse/team-hypster"
             ]
         }
     ]

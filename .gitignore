@@ -1,3 +1,4 @@
 authorizations.json
 */node_modules
 ngrok
+*.log
